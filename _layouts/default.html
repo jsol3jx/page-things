@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}" />
 </head>
 <body>
   <header>
-    <h1><a href="/" class="site-title">{{ site.title }}</a></h1>
+    <h1><a href="{{ "/" | relative_url }}" class="site-title">{{ site.title }}</a></h1>
     <nav>
       <ul>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="{{ "/resume" | relative_url }}">Resume</a></li>
+        <li><a href="{{ "/blog" | relative_url }}">Blog</a></li>
+        <li><a href="{{ "/about" | relative_url }}">About</a></li>
       </ul>
     </nav>
   </header>

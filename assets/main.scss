@@ -1,0 +1,49 @@
+
+@import "jekyll-theme-minimal";
+
+/* Custom overrides */
+
+/* Example: soften background and use a lighter palette to match the theme */
+/* ------- Theme override variables (easy to tweak) ------- */
+$brand-color: #007acc !default;
+$body-bg: #ffffff !default;
+$body-color: #222222 !default;
+$muted-color: #666666 !default;
+
+/* Global adjustments */
+body {
+  background-color: $body-bg;
+  color: $body-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header tweaks: keep theme structure but subtle background */
+header {
+  background-color: lighten($body-bg, 2%);
+  color: $brand-color;
+  padding: 1.25rem 0;
+}
+
+/* Content container: less heavy than previous custom style */
+main {
+  max-width: 780px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+/* Links and headings */
+a { color: $brand-color; }
+h1, h2, h3 { color: $brand-color; }
+
+.post-date { color: $muted-color; font-size: 0.95rem; }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  main { padding: 1rem; margin: 1rem; }
+  nav ul { gap: 0.75rem; }
+}
+
+/* End of overrides */
