@@ -1,5 +1,18 @@
 title: "John Stephen"
 description: "DevOps Engineer | Cloud | Automation"
-theme: none
 markdown: kramdown
 permalink: /:title/
+theme: jekyll-theme-minimal
+
+# Exclude and plugins
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+  - .gitignore
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
