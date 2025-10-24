@@ -1,0 +1,5 @@
+title: "John Stephen"
+description: "DevOps Engineer | Cloud | Automation"
+theme: none
+markdown: kramdown
+permalink: /:title/
