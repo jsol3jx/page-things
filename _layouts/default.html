@@ -1,65 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}" />
-</head>
+
+<html>
+
+{% include head.html %}
+
 <body>
-  <header>
-    <h1><a href="{{ "/" | relative_url }}" class="site-title">{{ site.title }}</a></h1>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">Dark</button>
-    <nav>
-      <ul>
-        <li><a href="{{ "/resume" | relative_url }}">Resume</a></li>
-        <li><a href="{{ "/blog" | relative_url }}">Blog</a></li>
-        <li><a href="{{ "/about" | relative_url }}">About</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    {{ content }}
-  </main>
+  {% include navbar.html %}
 
-  <footer>
-    <p>© 2025 {{ site.title }}</p>
-  </footer>
-  <script>
-    (function(){
-      const btn = document.getElementById('theme-toggle');
-      const root = document.documentElement;
-      const stored = localStorage.getItem('site-theme');
-      function applyTheme(t){
-        if(t === 'light'){
-          root.style.setProperty('--bg', '#fbfbfc');
-          root.style.setProperty('--card', '#ffffff');
-          root.style.setProperty('--muted', '#6b7280');
-          root.style.setProperty('--accent', '#0ea5e9');
-          root.style.setProperty('--text', '#0f172a');
-          btn.textContent = 'Light';
-        } else {
-          root.style.setProperty('--bg', '#0b1220');
-          root.style.setProperty('--card', '#0f1724');
-          root.style.setProperty('--muted', '#94a3b8');
-          root.style.setProperty('--accent', '#38bdf8');
-          root.style.setProperty('--text', '#e6eef8');
-          btn.textContent = 'Dark';
-        }
-      }
-      // initial
-      applyTheme(stored || 'dark');
-      btn.addEventListener('click', ()=>{
-        const current = localStorage.getItem('site-theme') || 'dark';
-        const next = current === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('site-theme', next);
-        applyTheme(next);
-      });
-    })();
-  </script>
+  {{ content }}
+
+  {% include footer.html %}
+
+  {% include scripts.html %}
+
+  {% include google-analytics.html %}
+
 </body>
+
 </html>
