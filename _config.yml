@@ -2,7 +2,7 @@ title:              Johnny Terraform
 #email:              your-email@example.com
 description:        A Blog about things I do with Terraform and maybe some other stuff.
 author:             John Stephen
-baseurl:            "/page-things"
+baseurl:            ""
 url:                "https://johnnyterraform.tech"
 
 # Social Profiles
